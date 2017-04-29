@@ -1,0 +1,40 @@
+<openerp>
+    <data>
+        <record model = 'ir.ui.view' id = 'account_invoice_repayment_schedule'>
+            <field name = 'name'>Repayment Schedule</field>
+            <field name = 'model'>account.invoice</field>
+            <field name = 'inherit_id' ref = 'account.invoice_form'/>
+            <field name = 'arch' type = 'xml'>
+                <!--Repayment Schedule-->
+                <xpath expr="//page[@string='Other Info']" position="after">
+                    <page string = 'Repayment Schedule'>
+                        <field name = 'schedule_ids'>
+                            <tree colors = "green:paid==1">
+                                <field name = 'installment'/>
+                                <field name = 'date_due'/>
+                                <field name = 'balance'/>
+                                <field name = 'installment_amount' sum = 'installment_amount'/>
+                                <field name = 'due'/>
+                                <field name = 'paid'/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+                <!--installment field-->
+                <xpath expr="//field[@name='account_id']" position="after">
+                    <field name = 'deposit'/>
+                    <field name = 'installment_start_date'/>
+                    <field name = 'installments'/>
+                    <field name = 'amount_due'/>
+                    <field name = 'as_at'/>
+                    <field name = 'report_as_at'/>
+                    <field name = 'report_amount_due'/>
+                </xpath>
+                <!--Generate Schedule Button-->
+                <xpath expr="//button[@name='invoice_open']" position="before">
+                    <button name = 'generate_schedule' type = 'object' string = 'Generate Schedule'/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

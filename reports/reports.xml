@@ -1,0 +1,13 @@
+<openerp>
+    <data>
+        <report
+            id = "invoice_repayment_schedule"
+            model = "account.invoice"
+            string = "Invoice Repayment Schedule"
+            report_type = "qweb-pdf"
+            name = "sale_investment.invoice_schedule"
+            file = "sale_investment.invoice_schedule"
+            attachment_use = "True"
+         />
+    </data>
+</openerp>

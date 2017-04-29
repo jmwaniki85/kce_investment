@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model = 'ir.ui.view' id = 'project_costing_wizard'>
+			<field name = "name">Project Costing</field>
+			<field name = "model">project.costing.wizard</field>
+			<field name = "arch" type = "xml">
+				<form>
+					<group>
+						<group>
+							<!--<field name = 'project_id'/>-->
+							<field name = 'project_no'/>
+							<field name = 'project_name'/>
+							<field name = 'numbering_prefix'/>
+						</group>
+						<group>
+
+						</group>
+					</group>
+					<footer>
+						<button name = "reclassify" type = "object" string = "Process Allotment" class = "oe_highlight"/>
+						or
+						<button special = "cancel" string = "Cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<act_window id = "launch_project_costing_wizard"
+			name = "Project Costing"
+			src_model = "investment.project.costing.header"
+			res_model = "project.costing.wizard"
+			view_mode = "form"
+			target = "new"
+			key2 = "client_action_multi" />
+
+
+
+	</data>
+</openerp>

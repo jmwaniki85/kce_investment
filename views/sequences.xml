@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<openerp>
+  <data>
+    <!--Investor Application Numbers-->
+    <record model = 'ir.sequence.type' id = 'seq_type_investor_app_id'>    
+      <field name = "name">Investor Application Numbers</field>
+      <field name = "code">investor.application</field>
+    </record>
+    <record model = "ir.sequence" id = "seq_investor_app_id">
+      <field name = "name">Investor Application Numbers</field>
+      <field name = "code">investor.application</field>
+      <field name = "prefix">INVESTOR_APP</field>
+      <field name = "padding">4</field>
+    </record>
+  	<!--Project Costing Numbers-->
+    <record model = 'ir.sequence.type' id = 'seq_type_project_costing_id'>    
+  		<field name = "name">Project Costing Numbers</field>
+  		<field name = "code">project.costing</field>
+  	</record>
+  	<record model = "ir.sequence" id = "seq_project_costing_id">
+  		<field name = "name">Project Costing Numbers</field>
+  		<field name = "code">project.costing</field>
+  		<field name = "prefix">PROJECT</field>
+  		<field name = "padding">4</field>
+  	</record>
+    <!--Ivestor Numbers-->
+    <record model = 'ir.sequence.type' id = 'seq_type_investor_id'>    
+      <field name = "name">Investor Numbers</field>
+      <field name = "code">investor</field>
+    </record>
+    <record model = "ir.sequence" id = "seq_investor_id">
+      <field name = "name">Investor Numbers</field>
+      <field name = "code">investor</field>
+      <field name = "prefix">INVESTOR</field>
+      <field name = "padding">4</field>
+    </record>
+    <!--Ivestor Closure Numbers-->
+    <record model = 'ir.sequence.type' id = 'seq_type_investor_closure_id'>    
+      <field name = "name">Investor Closure Numbers</field>
+      <field name = "code">investor.closure</field>
+    </record>
+    <record model = "ir.sequence" id = "seq_investor_closure_id">
+      <field name = "name">Investor Closure Numbers</field>
+      <field name = "code">investor.closure</field>
+      <field name = "prefix">CLOSURE</field>
+      <field name = "padding">4</field>
+    </record>
+      <!--Ivestor Closure Numbers-->
+    <record model = 'ir.sequence.type' id = 'seq_type_investor_activation_id'>    
+      <field name = "name">Investor Activation Numbers</field>
+      <field name = "code">investor.activation</field>
+    </record>
+    <record model = "ir.sequence" id = "seq_investor_activation_id">
+      <field name = "name">Investor Activation Numbers</field>
+      <field name = "code">investor.activation</field>
+      <field name = "prefix">ACTIVATE</field>
+      <field name = "padding">4</field>
+    </record>
+  </data>
+</openerp>

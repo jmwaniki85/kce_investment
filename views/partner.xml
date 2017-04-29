@@ -1,0 +1,62 @@
+<!--Extensions for Partner views-->
+<openerp>
+	<data>
+		<record model = 'ir.ui.view' id = 'sale_investment_investor_next_of_kin'>
+			<field name = 'name'>Next of Kin</field>
+			<field name = 'model'>res.partner</field>
+			<field name = 'inherit_id' ref = "base.view_partner_form"/>
+			<field name = 'arch' type = 'xml'>
+				<!--Next of Kin-->
+        <xpath expr="//page[@string='Internal Notes']" position="after">
+  					<page name="Additional" string="Next of Kin"><!--attrs="{'invisible': [('investor', '!=', '1')]}"-->
+  						<field name = 'next_of_kin_ids'>
+  							<tree editable = "bottom">
+  								<field name = 'name'/>
+  								<field name = 'relationship'/>
+  								<field name = 'beneficiary'/>
+  								<field name = 'date_of_birth'/>
+  								<field name = 'telephone'/>
+  								<field name = 'email'/>
+  								<field name = 'percentage_allocation'/>
+  							</tree>
+  						</field>
+  					</page>
+  				</xpath>
+          <!--Investor Information-->
+          <xpath expr="//page[@string='Next of Kin']" position="after">
+            <page name="Important" string="Investor Information"><!--attrs="{'invisible': [('investor', '!=', '1')]}"-->
+
+               <group>
+                <group>
+                  <field name = 'dob'/>
+                  <field name = 'idno'/>
+                  <field name = 'passport_no'/>
+                  <field name = 'investor_pin'/>
+                </group>
+                <group>
+                  <field name = 'marital_status'/>
+                  <field name = 'gender'/>
+                  <field name = 'occupation'/>
+                </group>
+              </group>
+
+            </page>
+          </xpath>
+
+
+
+			</field>
+		</record>
+
+    <record model = 'ir.ui.view' id = 'sale_investment_investor_form'>
+      <field name = 'name'>Investor Form</field>
+      <field name = 'model'>res.partner</field>
+      <field name = 'inherit_id' ref = "base.view_partner_form"/>
+      <field name = 'arch' type = 'xml'>
+        <xpath expr = "//field[@name='supplier']" position = "after">
+            <field name = "investor" string = "investor?"/>
+          </xpath>
+      </field>
+    </record>
+	</data>
+</openerp>
